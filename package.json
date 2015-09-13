@@ -1,0 +1,13 @@
+{
+  "name": "LocationPrint",
+  "version": "1.0.0",
+  "description": "display a console of an old home computer",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-este-watch": "^0.1.18",
+    "grunt": "^0.4.5",
+    "grunt-typescript": "^0.7.0"
+  },
+  "author": "ABA",
+  "license": "MIT"
+}
