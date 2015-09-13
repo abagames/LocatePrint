@@ -3,10 +3,10 @@ LocatePoint
 
 Display a console of an old home computer.
 
-![scrolltext](http://abagames.sakura.ne.jp/15/LocatePoint/scrolltext.gif) 
-![skigame](http://abagames.sakura.ne.jp/15/LocatePoint/skigame.gif)
+![scrolltext](http://abagames.sakura.ne.jp/15/LocatePrint/scrolltext.gif) 
+![skigame](http://abagames.sakura.ne.jp/15/LocatePrint/skigame.gif)
 
-[play skigame](http://abagames.sakura.ne.jp/15/LocatePoint/skigame.html)
+[play skigame](http://abagames.sakura.ne.jp/15/LocatePrint/skigame.html)
 
 ### Usage
 
