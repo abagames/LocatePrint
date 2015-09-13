@@ -1,4 +1,4 @@
-LocatePoint
+LocatePrint
 ======================
 
 Display a console of an old home computer.
