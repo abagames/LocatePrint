@@ -3,10 +3,19 @@ LocatePrint
 
 Display a console of an old home computer.
 
-![scrolltext](http://abagames.sakura.ne.jp/15/LocatePrint/scrolltext.gif) 
+### Demos
+
+![consolephysics](http://abagames.sakura.ne.jp/15/LocatePrint/consolephysics.gif)
+
+[see consolephysics](http://abagames.sakura.ne.jp/15/LocatePrint/consolephysics.html)
+
 ![skigame](http://abagames.sakura.ne.jp/15/LocatePrint/skigame.gif)
 
 [play skigame](http://abagames.sakura.ne.jp/15/LocatePrint/skigame.html)
+
+![scrolltext](http://abagames.sakura.ne.jp/15/LocatePrint/scrolltext.gif) 
+
+[see scrolltext](http://abagames.sakura.ne.jp/15/LocatePrint/scrolltext.html)
 
 ### Usage
 
@@ -106,6 +115,7 @@ function update() {
 
 [glfx.js](http://evanw.github.io/glfx.js/) /
 [lodash](https://lodash.com/) /
+[Matter.js](http://brm.io/matter-js/) /
 [GifCaptureCanvas](https://github.com/abagames/GifCaptureCanvas)
 
 * Articles

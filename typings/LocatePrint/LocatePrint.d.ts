@@ -6,6 +6,8 @@ declare class LocatePrint {
 	style: CSSStyleDeclaration;
 	canvas: HTMLCanvasElement;
 	context: CanvasRenderingContext2D;
+	consoleWidth: number;
+	consoleHeight: number;
 
 	constructor();
 	setCanvasSize(width: number, height: number): LocatePrint;
