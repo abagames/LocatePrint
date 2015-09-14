@@ -6,16 +6,13 @@ Display a console of an old home computer.
 ### Demos
 
 ![consolephysics](http://abagames.sakura.ne.jp/15/LocatePrint/consolephysics.gif)
-
-[see consolephysics](http://abagames.sakura.ne.jp/15/LocatePrint/consolephysics.html)
+[consolephysics](http://abagames.sakura.ne.jp/15/LocatePrint/consolephysics.html)
 
 ![skigame](http://abagames.sakura.ne.jp/15/LocatePrint/skigame.gif)
-
-[play skigame](http://abagames.sakura.ne.jp/15/LocatePrint/skigame.html)
+[skigame](http://abagames.sakura.ne.jp/15/LocatePrint/skigame.html)
 
 ![scrolltext](http://abagames.sakura.ne.jp/15/LocatePrint/scrolltext.gif) 
-
-[see scrolltext](http://abagames.sakura.ne.jp/15/LocatePrint/scrolltext.html)
+[scrolltext](http://abagames.sakura.ne.jp/15/LocatePrint/scrolltext.html)
 
 ### Usage
 
