@@ -43,7 +43,6 @@ window.onload = function () {
     };
     if (isEnableCapture) {
         gifCaptureCanvas = new GifCaptureCanvas();
-        gifCaptureCanvas.height = 400;
     }
     startTitle();
     requestAnimationFrame(updateFrame);
