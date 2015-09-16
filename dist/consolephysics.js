@@ -130,12 +130,20 @@ var ConsolePhysics = (function () {
             }
         }
         _.forEach(bodies, function (body) {
-            if (body.vertices) {
+            if (!body.render.visible) {
+                return;
+            }
+            for (var k = body.parts.length > 1 ? 1 : 0; k < body.parts.length; k++) {
+                var part = body.parts[k];
                 _this.currentColor = body.color;
                 _this.currentBackColor = body.backColor;
                 var fv;
                 var pv;
-                _.forEach(body.vertices, function (vert) {
+                _.forEach(part.vertices, function (vert) {
+                    if (vert.isInternal) {
+                        pv = null;
+                        return;
+                    }
                     var v = Matter.Vector.create(vert.x, vert.y);
                     if (pv) {
                         _this.drawLine(pv, v);
@@ -145,7 +153,9 @@ var ConsolePhysics = (function () {
                     }
                     pv = v;
                 });
-                _this.drawLine(pv, fv);
+                if (pv && fv) {
+                    _this.drawLine(pv, fv);
+                }
             }
         });
         this.lp.cls();

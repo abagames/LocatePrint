@@ -150,12 +150,20 @@ class ConsolePhysics {
 			}
 		}
 		_.forEach(bodies, (body: any) => {
-			if (body.vertices) {
+			if (!body.render.visible) {
+				return;
+			}
+            for (var k = body.parts.length > 1 ? 1 : 0; k < body.parts.length; k++) {
+                var part = body.parts[k];
 				this.currentColor = body.color;
 				this.currentBackColor = body.backColor;
 				var fv: Matter.Vector;
 				var pv: Matter.Vector;
-				_.forEach(body.vertices, (vert: any) => {
+				_.forEach(part.vertices, (vert: any) => {
+					if (vert.isInternal) {
+						pv = null;
+						return;
+					}
 					var v = (<any>Matter.Vector).create(vert.x, vert.y);
 					if (pv) {
 						this.drawLine(pv, v);
@@ -164,7 +172,9 @@ class ConsolePhysics {
 					}
 					pv = v;
 				});
-				this.drawLine(pv, fv);
+				if (pv && fv) {
+					this.drawLine(pv, fv);
+				}
 			}
 		});
 		this.lp.cls();
@@ -176,7 +186,7 @@ class ConsolePhysics {
 		this.lp.update();
 		if (this.isEnableCapture && (this.ticks % 3) === 0) {
 			this.gifCaptureCanvas.capture(this.lp.fxCanvas);
-		}		
+		}
 		this.ticks++;
 		Matter.Events.trigger(render, 'afterRender', event);
 	}
