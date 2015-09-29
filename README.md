@@ -1,7 +1,7 @@
 LocatePrint
 ======================
 
-Display a console of an old home computer.
+Display a console of an old home computer. (WebGL required)
 
 ### Demos
 
