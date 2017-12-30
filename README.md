@@ -16,24 +16,22 @@ Display a console of an old home computer. (WebGL required)
 
 ### Usage
 
-* Include libraries to HTML.
+* Load the font and the library.
 
 ```html
-    <script src="libs/glfx/glfx.js"></script>
-    <script src="shaders/colorshift.js"></script>
-    <script src="shaders/scanlines.js"></script>
-    <script src="LocatePrint.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  <script src="locate-print/index.js"></script>
 ```
 
-* Initialize LocatePrint.
+* Initialize locate-print.
 
-```ts
-var lp;
+```js
+var lp = window['locate-print'];
 var ticks = 0;
 
 window.onload = () => {
 	// initialize LocatePrint
-	lp = new LocatePrint();
+	lp.init();
 	// update the display in each frame
 	requestAnimationFrame(update);
 }
@@ -41,7 +39,7 @@ window.onload = () => {
 
 * Set a color and print a text.
 
-```ts
+```js
 function update() {
 	requestAnimationFrame(update);
 	// set a color of a text
@@ -63,7 +61,7 @@ function update() {
 
 * setCanvasSize, setColorPalettes, console
 
-```ts
+```js
 	// set the pixel widht/height of the canvas
 	// default: 640 x 480
 	lp.setCanvasSize(640, 400);
@@ -78,14 +76,14 @@ function update() {
 
 * cls
 
-```ts
+```js
 	// clear the console
 	lp.cls();
 ```
 
 * color, locate, print
 
-```ts
+```js
 		var ts = 'SKI GAME'.substring(0, floor(ticks / 5));
 		// set the character color
 		// params: (foreground, background = 0)
@@ -98,7 +96,7 @@ function update() {
 
 * scroll, screen
 
-```ts
+```js
 	// scroll the console 
 	lp.scroll(0, -1);
 	lp.color(0, 1);
@@ -111,16 +109,11 @@ function update() {
 * Libraries
 
 [glfx.js](http://evanw.github.io/glfx.js/) /
-[lodash](https://lodash.com/) /
 [Matter.js](http://brm.io/matter-js/) /
-[GifCaptureCanvas](https://github.com/abagames/GifCaptureCanvas)
+[gif-capture-canvas](https://github.com/abagames/gif-capture-canvas)
 
 * Articles
 
 [WebGL Fake CRT Effect for HTML5 Games](http://www.zachstronaut.com/posts/2012/08/17/webgl-fake-crt-html5.html)
 
 [Loading custom shaders](https://github.com/evanw/glfx.js/issues/9)
-
-License
-----------
-MIT
