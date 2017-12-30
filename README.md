@@ -5,14 +5,14 @@ Display a console of an old home computer. (WebGL required)
 
 ### Demos
 
-![consolephysics](http://abagames.sakura.ne.jp/15/LocatePrint/consolephysics.gif)
-[consolephysics](http://abagames.sakura.ne.jp/15/LocatePrint/consolephysics.html)
+![consolephysics](http://abagames.github.io/LocatePrint/samples/consolephysics.gif)
+[consolephysics](http://abagames.github.io/LocatePrint/samples/index.html?consolephysics)
 
-![skigame](http://abagames.sakura.ne.jp/15/LocatePrint/skigame.gif)
-[skigame](http://abagames.sakura.ne.jp/15/LocatePrint/skigame.html)
+![skigame](http://abagames.github.io/LocatePrint/samples/skigame.gif)
+[skigame](http://abagames.github.io/LocatePrint/samples/index.html?skigame)
 
-![scrolltext](http://abagames.sakura.ne.jp/15/LocatePrint/scrolltext.gif) 
-[scrolltext](http://abagames.sakura.ne.jp/15/LocatePrint/scrolltext.html)
+![scrolltext](http://abagames.github.io/LocatePrint/samples/scrolltext.gif) 
+[scrolltext](http://abagames.github.io/LocatePrint/samples/index.html?scrolltext)
 
 ### Usage
 
@@ -30,10 +30,10 @@ var lp = window['locate-print'];
 var ticks = 0;
 
 window.onload = () => {
-	// initialize LocatePrint
-	lp.init();
-	// update the display in each frame
-	requestAnimationFrame(update);
+  // initialize LocatePrint
+  lp.init();
+  // update the display in each frame
+  requestAnimationFrame(update);
 }
 ```
 
@@ -41,19 +41,19 @@ window.onload = () => {
 
 ```js
 function update() {
-	requestAnimationFrame(update);
-	// set a color of a text
-	//  0: black, 1: red, 2: blue 3: green
-	//  4: yellow, 5: magenta, 6: cyan, 7: white
-	lp.color(ticks % 8);
-	// print a text
-	lp.print('Abc', lp.scrollAtLastChar);
-	// set a foreground color and a background color
-	lp.color(0, ticks % 8);
-	lp.print('Def', lp.scrollAtLastChar);
-	// 'update' should be called in each frame
-	lp.update();
-	ticks++;
+  requestAnimationFrame(update);
+  // set a color of a text
+  //  0: black, 1: red, 2: blue 3: green
+  //  4: yellow, 5: magenta, 6: cyan, 7: white
+  lp.color(ticks % 8);
+  // print a text
+  lp.print('Abc', lp.scrollAtLastChar);
+  // set a foreground color and a background color
+  lp.color(0, ticks % 8);
+  lp.print('Def', lp.scrollAtLastChar);
+  // 'update' should be called in each frame
+  lp.update();
+  ticks++;
 }
 ```
 
@@ -62,46 +62,46 @@ function update() {
 * setCanvasSize, setColorPalettes, console
 
 ```js
-	// set the pixel widht/height of the canvas
-	// default: 640 x 480
-	lp.setCanvasSize(640, 400);
-	// set the color palettes (0: green, 1: white)
-	// default: 0: black, 1: red, 2: blue 3: green
-	//          4: yellow, 5: magenta, 6: cyan, 7: white
-	lp.setColorPalettes(['green', 'white']);
-	// set the character width/height of the console
-	// default: 40 x 20
-	lp.console(32, 16);
+  // set the pixel widht/height of the canvas
+  // default: 640 x 480
+  lp.setCanvasSize(640, 400);
+  // set the color palettes (0: green, 1: white)
+  // default: 0: black, 1: red, 2: blue 3: green
+  //          4: yellow, 5: magenta, 6: cyan, 7: white
+  lp.setColorPalettes(['green', 'white']);
+  // set the character width/height of the console
+  // default: 40 x 20
+  lp.console(32, 16);
 ```
 
 * cls
 
 ```js
-	// clear the console
-	lp.cls();
+  // clear the console
+  lp.cls();
 ```
 
 * color, locate, print
 
 ```js
-		var ts = 'SKI GAME'.substring(0, floor(ticks / 5));
-		// set the character color
-		// params: (foreground, background = 0)
-		lp.color(0, 1);
-		// set the cursor location x/y
-		lp.locate(19 - ts.length, 5);
-		// print the text
-		lp.print(ts);
+  var ts = 'SKI GAME'.substring(0, floor(ticks / 5));
+  // set the character color
+  // params: (foreground, background = 0)
+  lp.color(0, 1);
+  // set the cursor location x/y
+  lp.locate(19 - ts.length, 5);
+  // print the text
+  lp.print(ts);
 ```
 
 * scroll, screen
 
 ```js
-	// scroll the console 
-	lp.scroll(0, -1);
-	lp.color(0, 1);
-	// get the string on the console at the specific location x/y
-	var cc: string = lp.screen(sx, 4);
+  // scroll the console 
+  lp.scroll(0, -1);
+  lp.color(0, 1);
+  // get the string on the console at the specific location x/y
+  var cc: string = lp.screen(sx, 4);
 ```
 
 ### Acknowledgement
