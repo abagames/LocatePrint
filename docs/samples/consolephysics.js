@@ -347,10 +347,11 @@ var ConsolePhysics = /** @class */ (function () {
         }
         var engine = matter.engine;
         var world = engine.world;
-        /*var event: any = {
+        var render = engine.render;
+        var event = {
             timestamp: engine.timing.timestamp
         };
-        Matter.Events.trigger(render, 'beforeRender', event);*/
+        Matter.Events.trigger(render, 'beforeRender', event);
         var bodies = Matter.Composite.allBodies(world);
         for (var ty = 0; ty < this.consoleHeight; ty++) {
             for (var tx = 0; tx < this.consoleWidth; tx++) {
@@ -401,7 +402,7 @@ var ConsolePhysics = /** @class */ (function () {
             gcc.capture(lp.fxCanvas);
         }
         this.ticks++;
-        //Matter.Events.trigger(render, 'afterRender', event);
+        Matter.Events.trigger(render, 'afterRender', event);
     };
     ConsolePhysics.prototype.drawLine = function (p1, p2) {
         var tx1 = Math.floor(p1.x / this.textWidth);
@@ -489,7 +490,6 @@ var cp;
 var boxX = 0;
 window.onload = function () {
     cp = new ConsolePhysics();
-    lp.setCanvasStyle('inline');
     cp.setUpdateFunc(updateCp);
     cp.init();
     cp.run();
@@ -581,6 +581,7 @@ function init() {
     exports.fxCanvas = fx.canvas();
     exports.fxCanvas.colorShift = fx.wrap(colorshift_1.default);
     exports.fxCanvas.scanlines = fx.wrap(scanlines_1.default);
+    exports.fxCanvas.id = 'locate-print-canvas';
     exports.canvas = document.createElement('canvas');
     exports.canvas.width = 640;
     exports.canvas.height = 480;
@@ -588,7 +589,7 @@ function init() {
     texture = exports.fxCanvas.texture(exports.canvas);
     colorPalettes =
         ['black', 'red', 'green', 'blue', 'yellow', 'magenta', 'cyan', 'white'];
-    fontName = 'VT323'; //Small Fonts';
+    fontName = 'VT323';
     currentColor = colorPalettes.length - 1;
     currentBackgroundColor = 0;
     console(40, 20);

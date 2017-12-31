@@ -8,10 +8,8 @@ var ticks = 0;
 window.onload = () => {
 	// initialize LocatePrint
 	lp.init();
-	// align the display to center
-	lp.setCanvasStyle('inline');
 	// update the display in each frame
-	requestAnimationFrame(update);
+	update();
 }
 
 function update() {

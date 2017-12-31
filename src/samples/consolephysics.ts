@@ -129,10 +129,11 @@ class ConsolePhysics {
 		}
 		const engine = matter.engine;
 		const world = engine.world;
-		/*var event: any = {
+		const render = engine.render;
+		var event: any = {
 			timestamp: engine.timing.timestamp
 		};
-		Matter.Events.trigger(render, 'beforeRender', event);*/
+		Matter.Events.trigger(render, 'beforeRender', event);
 		var bodies = Matter.Composite.allBodies(<any>world);
 		for (var ty = 0; ty < this.consoleHeight; ty++) {
 			for (var tx = 0; tx < this.consoleWidth; tx++) {
@@ -182,7 +183,7 @@ class ConsolePhysics {
 			gcc.capture(lp.fxCanvas);
 		}
 		this.ticks++;
-		//Matter.Events.trigger(render, 'afterRender', event);
+		Matter.Events.trigger(render, 'afterRender', event);
 	}
 
 	drawLine(p1: Matter.Vector, p2: Matter.Vector) {
@@ -278,7 +279,6 @@ var boxX = 0;
 
 window.onload = () => {
 	cp = new ConsolePhysics();
-	lp.setCanvasStyle('inline');
 	cp.setUpdateFunc(updateCp);
 	cp.init();
 	cp.run();

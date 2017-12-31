@@ -33,6 +33,7 @@ export function init() {
 	fxCanvas = fx.canvas();
 	fxCanvas.colorShift = fx.wrap(colorShift);
 	fxCanvas.scanlines = fx.wrap(scanlines);
+	fxCanvas.id = 'locate-print-canvas';
 	canvas = document.createElement('canvas');
 	canvas.width = 640;
 	canvas.height = 480;
@@ -40,7 +41,7 @@ export function init() {
 	texture = fxCanvas.texture(canvas);
 	colorPalettes =
 		['black', 'red', 'green', 'blue', 'yellow', 'magenta', 'cyan', 'white'];
-	fontName = 'VT323';//Small Fonts';
+	fontName = 'VT323';
 	currentColor = colorPalettes.length - 1;
 	currentBackgroundColor = 0;
 	console(40, 20);

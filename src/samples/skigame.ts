@@ -20,8 +20,6 @@ var random = Math.random;
 window.onload = () => {
 	// initialize LocatePrint
 	lp.init();
-	// align the display to center
-	lp.setCanvasStyle('inline');
 	// set the pixel widht/height of the canvas
 	// default: 640 x 480
 	lp.setCanvasSize(640, 400);
@@ -44,7 +42,7 @@ window.onload = () => {
 		isKeyDown[e.keyCode] = false;
 	};
 	startTitle();
-	requestAnimationFrame(updateFrame);
+	updateFrame();
 }
 
 function updateFrame() {

@@ -241,10 +241,8 @@ var ticks = 0;
 window.onload = function () {
     // initialize LocatePrint
     lp.init();
-    // align the display to center
-    lp.setCanvasStyle('inline');
     // update the display in each frame
-    requestAnimationFrame(update);
+    update();
 };
 function update() {
     requestAnimationFrame(update);
@@ -298,6 +296,7 @@ function init() {
     exports.fxCanvas = fx.canvas();
     exports.fxCanvas.colorShift = fx.wrap(colorshift_1.default);
     exports.fxCanvas.scanlines = fx.wrap(scanlines_1.default);
+    exports.fxCanvas.id = 'locate-print-canvas';
     exports.canvas = document.createElement('canvas');
     exports.canvas.width = 640;
     exports.canvas.height = 480;
@@ -305,7 +304,7 @@ function init() {
     texture = exports.fxCanvas.texture(exports.canvas);
     colorPalettes =
         ['black', 'red', 'green', 'blue', 'yellow', 'magenta', 'cyan', 'white'];
-    fontName = 'VT323'; //Small Fonts';
+    fontName = 'VT323';
     currentColor = colorPalettes.length - 1;
     currentBackgroundColor = 0;
     console(40, 20);

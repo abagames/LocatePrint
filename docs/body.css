@@ -1,11 +1,20 @@
 ﻿body {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: black;
-    width: 95%;
-    text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: black;
+  width: 95%;
+  text-align: center;
+  overflow-y: hidden;
+}
+
+#locate-print-canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
 }
