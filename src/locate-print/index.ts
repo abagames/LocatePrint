@@ -96,7 +96,12 @@ export function locate(x: number, y: number) {
 
 export function print(text: string, scrollType: number = scrollNone) {
 	calcTextSize();
+	const cx = cursorX;
 	forEach(text, (c: string) => {
+		if (c === '\n') {
+			cursorX = cx;
+			cursorY++;
+		}
 		if (cursorY >= consoleHeight) {
 			return false;
 		}
