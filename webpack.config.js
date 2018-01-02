@@ -22,7 +22,7 @@ module.exports = function (env) {
     config.output = {
       path: __dirname + '/docs/locate-print',
       filename: 'index.js',
-      library: ['locate-print'],
+      library: ['lp'],
       libraryTarget: 'umd'
     };
   } else {

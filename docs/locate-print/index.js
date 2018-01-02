@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["locate-print"] = factory();
+		exports["lp"] = factory();
 	else
-		root["locate-print"] = factory();
+		root["lp"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -272,6 +272,7 @@ function init() {
     exports.fxCanvas = fx.canvas();
     exports.fxCanvas.colorShift = fx.wrap(colorshift_1.default);
     exports.fxCanvas.scanlines = fx.wrap(scanlines_1.default);
+    exports.fxCanvas.id = 'locate-print-canvas';
     exports.canvas = document.createElement('canvas');
     exports.canvas.width = 640;
     exports.canvas.height = 480;
@@ -279,7 +280,7 @@ function init() {
     texture = exports.fxCanvas.texture(exports.canvas);
     colorPalettes =
         ['black', 'red', 'green', 'blue', 'yellow', 'magenta', 'cyan', 'white'];
-    fontName = 'VT323'; //Small Fonts';
+    fontName = 'VT323';
     currentColor = colorPalettes.length - 1;
     currentBackgroundColor = 0;
     console(40, 20);
@@ -295,15 +296,15 @@ function setCanvasStyle(style) {
     exports.fxCanvas.style = style;
 }
 exports.setCanvasStyle = setCanvasStyle;
-function setColorPalettes(colorPalettes) {
-    if (colorPalettes === void 0) { colorPalettes = null; }
-    colorPalettes = colorPalettes;
-    currentColor = colorPalettes.length - 1;
+function setColorPalettes(_colorPalettes) {
+    if (_colorPalettes === void 0) { _colorPalettes = null; }
+    colorPalettes = _colorPalettes;
+    currentColor = _colorPalettes.length - 1;
     currentBackgroundColor = 0;
 }
 exports.setColorPalettes = setColorPalettes;
-function setFontName(fontName) {
-    fontName = fontName;
+function setFontName(_fontName) {
+    fontName = _fontName;
 }
 exports.setFontName = setFontName;
 function update() {
@@ -335,7 +336,12 @@ exports.locate = locate;
 function print(text, scrollType) {
     if (scrollType === void 0) { scrollType = exports.scrollNone; }
     calcTextSize();
+    var cx = exports.cursorX;
     forEach(text, function (c) {
+        if (c === '\n') {
+            exports.cursorX = cx;
+            exports.cursorY++;
+        }
         if (exports.cursorY >= exports.consoleHeight) {
             return false;
         }

@@ -26,7 +26,6 @@ Display a console of an old home computer. (WebGL required)
 * Initialize locate-print.
 
 ```js
-var lp = window['locate-print'];
 var ticks = 0;
 
 window.onload = () => {
