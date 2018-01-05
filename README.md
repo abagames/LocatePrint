@@ -14,6 +14,9 @@ Display a console of an old home computer. (WebGL required)
 ![scrolltext](http://abagames.github.io/LocatePrint/samples/scrolltext.gif) 
 [scrolltext](http://abagames.github.io/LocatePrint/samples/index.html?scrolltext)
 
+![snake-shift](http://abagames.sakura.ne.jp/18/snake-shift/screenshot.gif) 
+[snake-shift](https://snake-shift.glitch.me/) / [(source)](https://github.com/abagames/snake-shift)
+
 ### Usage
 
 * Load the font and the library.
